@@ -9,7 +9,7 @@ services:
     depends_on:
       - mongo
     environment:
-      - MONGO_URI: mongodb://raouia:raouia@mongo:27017/devops
+      MONGO_URI: mongodb://raouia:raouia@mongo:27017/devops
       
 
   frontend:
@@ -29,8 +29,8 @@ services:
     volumes:
       - mongo-data:/data/db  # Volume pour les données MongoDB
     environment:
-      - MONGO_INITDB_ROOT_USERNAME: raouia
-      - MONGO_INITDB_ROOT_PASSWORD: raouia
+      MONGO_INITDB_ROOT_USERNAME: raouia
+      MONGO_INITDB_ROOT_PASSWORD: raouia
 
   mongo-express:
     image: mongo-express
