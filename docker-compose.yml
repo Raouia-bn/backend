@@ -1,7 +1,7 @@
 
 services:
   backend:
-    image: backend
+    image: 954086103677.dkr.ecr.us-east-1.amazonaws.com/devops/backend:latest
     container_name: backend
     ports:
       - "5000:5000"
@@ -13,7 +13,7 @@ services:
       
 
   frontend:
-    image: frontend
+    image: 954086103677.dkr.ecr.us-east-1.amazonaws.com/devops/frontend:latest
     container_name: frontend
     ports:
       - "3000:80"
@@ -32,6 +32,17 @@ services:
       - MONGO_INITDB_ROOT_USERNAME: raouia
       - MONGO_INITDB_ROOT_PASSWORD: raouia
 
+  mongo-express:
+    image: mongo-express
+    restart: always
+    depends_on:
+      - mongo
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: raouia
+      ME_CONFIG_MONGODB_ADMINPASSWORD: raouia
+      ME_CONFIG_MONGODB_URL: mongodb://raouia:raouia@mongo:27017/
+
 volumes:
   mongo-data:
-

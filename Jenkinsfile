@@ -46,9 +46,9 @@ pipeline {
   post {
     always {
       echo 'This will always run' 
-      echo 'Deploying Recylovision...'
-      // sh 'docker compose --project-name Recylovision up -d'
-      echo 'Recylovision Deployed'
+      echo 'Deploying project-devops...'
+      sh 'docker compose --project-name project-devops up -d'
+      echo 'project-devops Deployed'
     }
   }
 }
