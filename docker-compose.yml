@@ -31,6 +31,9 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: raouia
       MONGO_INITDB_ROOT_PASSWORD: raouia
+      MONGO_INITDB_DATABASE: devops
+    command: mongod --auth --bind_ip_all --port 27017
+
 
   mongo-express:
     image: mongo-express
@@ -42,7 +45,7 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: raouia
       ME_CONFIG_MONGODB_ADMINPASSWORD: raouia
-      ME_CONFIG_MONGODB_URL: mongodb://raouia:raouia@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://raouia:raouia@mongo:27017/devops
 
 volumes:
   mongo-data:
