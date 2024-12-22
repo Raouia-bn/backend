@@ -47,7 +47,7 @@ pipeline {
     always {
       echo 'This will always run' 
       echo 'Deploying project-devops...'
-      sh 'docker compose --project-name project-devops up -d'
+      sh 'docker compose --project-name devops up -d'
       echo 'project-devops Deployed'
     }
   }
