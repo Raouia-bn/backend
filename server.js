@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.connect('mongodb://raouia:raouia@mongo:27017/devops')
+mongoose.connect('mongodb://raouia:raouia@mongo:27017')
   .then(() => console.log("MongoDB Connected"))
   .catch((err) => console.log(err));
 
